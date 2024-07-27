@@ -1356,7 +1356,7 @@ section,
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
   color: var(--contrast-color);
-  background-color: var(--accent-color);
+  background-color: #c8cfca;
 }
 
 .portfolio .portfolio-filters li:first-child {
