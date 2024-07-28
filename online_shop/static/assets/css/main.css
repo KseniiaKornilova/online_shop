@@ -2384,3 +2384,7 @@ table img.fixed-size-img-in-shopping-cart {
   height: auto;
   width: 30%;
 }
+
+table th.image-column {
+  width: 400px;
+}

@@ -11,7 +11,7 @@
 <table class="table">
 <thead>
     <tr>
-        <th></th> 
+        <th class="image-column"></th> 
         <th>Наименование</th> 
         <th>Количество</th> 
         <th>Цена 1 ед </th> 
@@ -28,7 +28,14 @@
                 <a href="{{ product.get_absolute_url }}"><img class='fixed-size-img-in-shopping-cart' src="{{ product.image.url }}"></a>
             </td>
             <td>{{ product.name }}</td>
-            <td>{{ item.quantity }}</td>
+            <td>
+                <form action="{% url 'cart:cart_add' product.id %}" method="post"> 
+                    {{ item.update_quantity_form.quantity }}
+                    {{ item.update_quantity_form.override }}
+                    <input class='btn-get-started' type="submit" value="Изменить">
+                    {% csrf_token %}
+                    </form>
+            </td>
             <td>{{ item.price }}</td>
             <td>{{ item.total_price }}</td>
             <td>
