@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% load bootstrap4 %}
 
 {% block title %} Buket - главная страница {% endblock %} 
 
@@ -55,7 +56,7 @@
               У нас вы найдете самые свежие и красивые цветы для любого случая с доставкой за 60 минут
             </p>
             <p class="mt-5" data-aos="fade-up">
-              <a href="#" class="btn btn-get-started">Выбрать букет</a>
+              <a href="{% url 'shop:product_list' %}" class="btn btn-get-started">Выбрать букет</a>
             </p>
           </div>
         </div>

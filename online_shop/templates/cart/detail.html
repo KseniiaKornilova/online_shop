@@ -1,0 +1,61 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% load bootstrap4 %}
+
+{% block title %} Buket - корзина {% endblock %} 
+
+{% block content %}  
+<div class="about-2 section">
+<div class="container-fluid">
+<div class="table-responsive">
+<table class="table">
+<thead>
+    <tr>
+        <th></th> 
+        <th>Наименование</th> 
+        <th>Количество</th> 
+        <th>Цена 1 ед </th> 
+        <th>Общая цена</th>
+        <th></th> 
+    </tr>
+</thead>
+
+<tbody>
+    {% for item in cart %}
+        {% with product=item.product %}
+        <tr>
+            <td>
+                <a href="{{ product.get_absolute_url }}"><img class='fixed-size-img-in-shopping-cart' src="{{ product.image.url }}"></a>
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.total_price }}</td>
+            <td>
+                <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                    <button class='btn-get-started' type="submit">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                    {% csrf_token %}
+                </form>
+            </td>
+        </tr>
+        {% endwith %}
+    {% endfor %} 
+
+    <tr>
+        <td>Итого</td>
+        <td colspan="4"></td>
+        <td>{{ cart.get_total_price }} руб.</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p class="float-end">
+    <a href="{% url 'shop:product_list' %}" class="btn-get-started">Продолжить покупки</a>
+    <a href="#" class="btn-get-started">Перейти к оплате</a>
+</p>
+</div>
+{% endblock %}

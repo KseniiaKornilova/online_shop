@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %}
+{% load bootstrap4 %}
 
 {% block title %} Buket - {{ product.name }} {% endblock %} 
 
@@ -31,7 +32,11 @@
                 Цена: {{ product.price }} рублей
               </p>
               <p>
-                <a href="#" class="btn-get-started">Добавить в корзину</a>
+                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                  {{ form }}
+                  {% csrf_token %}
+                  <input class='btn-get-started' type="submit" value="Добавить в корзину">
+                  </form>
               </p>
             </div>
           </div>
