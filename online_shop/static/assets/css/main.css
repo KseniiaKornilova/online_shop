@@ -2388,3 +2388,15 @@ table img.fixed-size-img-in-shopping-cart {
 table th.image-column {
   width: 400px;
 }
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-counter {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 2px 6px;
+  font-size: 12px;
+}
