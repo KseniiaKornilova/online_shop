@@ -56,7 +56,7 @@
           <li><a href="{% url 'shop:main_page' %}">Главная</a></li>
           <li><a href="{% url 'shop:product_list' %}">Каталог</a></li>
           {% with total_items=cart|length %}
-          <li><a href="{% url 'cart:cart_detail' %}" class="cart-icon"><i class="fas fa-shopping-basket"></i>
+          <li><a href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-basket cart-icon"></i>
             <span class="cart-counter">{{ total_items }}</span>
           </a></li>
           {% endwith %} 
