@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.shop.apps.ShopConfig',
     'apps.cart.apps.CartConfig',
     'bootstrap4',
+    'apps.orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Asia/Almaty'
 

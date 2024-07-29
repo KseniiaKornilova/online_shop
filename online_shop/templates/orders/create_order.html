@@ -1,0 +1,64 @@
+{% extends 'base.html' %} 
+{% load bootstrap4 %}
+
+{% block title %} Buket - оформление заказа {% endblock %} 
+
+{% block content %}  
+<div class="text-center">
+<h1>Корзина</h1>
+</div>
+
+<section id="comment-form" class="comment-form section">
+    <div class="container">
+        <div class="row">
+
+     <div class="col-md-6">
+      <form action="" method="post">
+        <h4 class="text-center">Ваши персональные данные</h4>
+        <div class="row">
+          <div class="col-md-6 form-group">
+            {{ form.first_name }}
+          </div>
+          <div class="col-md-6 form-group">
+            {{ form.last_name }}
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                {{ form.email }}
+            </div>
+            <div class="col-md-6 form-group">
+                {{ form.city }}
+            </div>
+        <div class="row">    
+          <div class="col form-group">
+            {{ form.address }}
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Продолжить оплату</button>
+        </div>
+        {% csrf_token %}
+        </div>
+      </form>
+    </div>
+
+  <div class="col-md-6">
+    <div class="recent-posts-widget widget-item">
+        <h3 class="widget-title">Ваш заказ</h3>
+        {% for item in cart %}
+        <div class="post-item">
+          <h4>{{ item.product.name }} x {{ item.quantity }} .......... {{ item.total_price }} руб.</h4>
+        </div>
+        {% endfor %}
+        <div class="post-item">
+            <h3>Всего: {{ cart.get_total_price }} руб.</h3>
+        </div>
+
+      </div>
+</div>
+</div>
+</section>
+
+{% endblock %} 

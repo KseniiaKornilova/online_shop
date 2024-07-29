@@ -62,7 +62,7 @@
 
 <p class="float-end">
     <a href="{% url 'shop:product_list' %}" class="btn-get-started">Продолжить покупки</a>
-    <a href="#" class="btn-get-started">Перейти к оплате</a>
+    <a href="{% url 'orders:order_create' %}" class="btn-get-started">Перейти к оплате</a>
 </p>
 </div>
 {% endblock %}

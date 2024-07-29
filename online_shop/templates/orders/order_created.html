@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% load bootstrap4 %}
+
+{% block title %} Buket -  заказ оформлен{% endblock %} 
+
+{% block content %}  
+<div class="container mt-3">
+    <h1 class="ml-3">Спасибо, Ваш заказ оформлен</h1>
+    <div class="pl-4">
+        <p>Вы можете отслеживать данные по Вашему заказу в Вашем профиле. Номер Вашего заказа -  
+        <strong>{{ order.id }}</strong>.</p>
+    </div>
+</div>
+{% endblock %}
