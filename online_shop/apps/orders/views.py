@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import OrderItem
 from .forms import OrderCreateForm
+from .tasks import order_created
 from ..cart.cart import Cart
 
 
@@ -14,6 +15,7 @@ def order_create(request):
                 OrderItem.objects.create(order=order, product=item['product'],
                                          price=item['price'], quantity=item['quantity'])
             cart.clear()
+            order_created.delay(order.id)
             return render(request, 'orders/order_created.html', {'order': order})
     else:
         form = OrderCreateForm()
