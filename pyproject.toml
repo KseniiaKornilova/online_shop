@@ -13,6 +13,7 @@ pillow = "^10.4.0"
 django-bootstrap4 = "^24.3"
 celery = "^5.4.0"
 flower = "^2.0.1"
+stripe = "^10.6.0"
 
 
 [build-system]

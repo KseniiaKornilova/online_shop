@@ -32,7 +32,7 @@
                 <form action="{% url 'cart:cart_add' product.id %}" method="post"> 
                     {{ item.update_quantity_form.quantity }}
                     {{ item.update_quantity_form.override }}
-                    <input class='btn-get-started' type="submit" value="Изменить">
+                    <button class='btn-get-started' type="submit"><i class="fas fa-edit"></i></button>
                     {% csrf_token %}
                     </form>
             </td>

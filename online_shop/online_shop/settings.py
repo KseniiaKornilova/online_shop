@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.cart.apps.CartConfig',
     'bootstrap4',
     'apps.orders.apps.OrdersConfig',
+    'apps.payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,11 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ksyu.kornilova2809@gmail.com'
 EMAIL_HOST_PASSWORD = 'oqzo xgyl tgem ulgc'
 EMAIL_USE_TLS = True
+
+
+# Настроечные параметры Stripe
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51PjhgVKHrpYCcLA8RHKDOIRc94OyXFNDZSw06dBqQg3WC \
+                            HDjWdkrg4v6v9bYAwx1BCtH2bh8Ys04HTqlnZvI5tAL003n5f3Jb8'
+STRIPE_SECRET_KEY = 'sk_test_51PjhgVKHrpYCcLA8jqwGflQE7FDiNWCbuqRvcYbOpgUHgBGH5dkE \
+                        YVRgPWPOV5dHSJ7TZYJQTtr3oofIMPLZ2CIc00Gzl6PHZd'
+STRIPE_API_VERSION = '2022-08-01'

@@ -35,7 +35,7 @@
                 <form action="{% url 'cart:cart_add' product.id %}" method="post">
                   {{ form }}
                   {% csrf_token %}
-                  <input class='btn-get-started' type="submit" value="Добавить в корзину">
+                  <button class='btn-get-started' type="submit"><i class="fas fa-cart-plus"></i></button>
                   </form>
               </p>
             </div>
