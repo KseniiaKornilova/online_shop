@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Simple Transactional Email</title>
+</head>
+<body style="background-color: #f4f5f6; font-family: Helvetica, sans-serif; -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.3; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f4f5f6;">
+  <tr>
+    <td>&nbsp;</td>
+    <td class="container" style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; margin: 0 auto !important; max-width: 600px; padding: 0; padding-top: 24px; width: 600px;">
+      <div class="content" style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px; padding: 0;">
+
+        <!-- START CENTERED WHITE CONTAINER -->
+        <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This is preheader text. Some clients will show this text as a preview.</span>
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border: 1px solid #eaebed; border-radius: 16px;">
+
+          <!-- START MAIN CONTENT AREA -->
+          <tr>
+            <td class="wrapper" style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px;">
+              <h1 class="sitename" style="color: #2d465e; font-size: 30px; font-weight: 300;">Buket</h1>
+              <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">{{ order.first_name }}, Ваш заказ успешно оформлен! Номер Вашего заказа: {{ order.id }}</p>
+              <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Статус доставки товара Вы можете отслеживать в Вашем личном кабинете</p>
+              <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Благодарим Вас за покупку!</p>
+            </td>
+          </tr>
+
+          <!-- END MAIN CONTENT AREA -->
+        </table>
+
+        <!-- START FOOTER -->
+        <div class="footer" style="clear: both; padding-top: 24px; text-align: center; width: 100%;">
+          <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; padding-bottom: 16px; padding-top: 16px; color: #9a9ea6; font-size: 16px; text-align: center;">
+                <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;">Buket, Пресненская набережная 145/12</span>
+                <br> buket_shop@gmai.com
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- END FOOTER -->
+
+      </div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

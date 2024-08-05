@@ -1,5 +1,7 @@
 from celery import shared_task
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 from .models import Order
 
 
@@ -7,7 +9,8 @@ from .models import Order
 def order_created(order_id):
     order = Order.objects.get(id=order_id)
     subject = f'Ваш заказ №{order_id}'
-    message = f'Здравствуйте, {order.first_name}, \n' \
-              f'Ваш заказ был успешно оформлен! Номер заказа: {order_id}'
-    mail_sent = send_mail(subject, message, 'ksyu_kornilova@mail.ru', [order.email])
-    return mail_sent
+    html_message = render_to_string('orders/send_mail.html', {'order': order})
+    text_message = strip_tags(html_message)
+    email = EmailMultiAlternatives(subject, text_message, 'ksyu_kornilova@mail.ru', [order.email])
+    email.attach_alternative(html_message, 'text/html')
+    email.send()
